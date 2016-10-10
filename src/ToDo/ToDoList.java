@@ -1,18 +1,25 @@
 package ToDo;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.IOException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 /**
  * Created by christiancampbell on 10/10/16.
  */
 public class ToDoList {
-    public static void toDo() {
+    public static void toDo() throws IOException {
 
-        ArrayList<String> main = new ArrayList<>();
+        String fileName = "ToDoList.txt";
+        PrintWriter outFile = new PrintWriter(new FileWriter(fileName));
+
+
+
         ArrayList<String> groceries = new ArrayList<>();
         ArrayList<String> personal = new ArrayList<>();
         ArrayList<String> chores = new ArrayList<>();
         while (true) {
-            System.out.println("Please Select 1 to list all item" + "\n" + "Please select 2 to add an item." + "\n" + "Please select 3 to remove items" + "\n" + "Please select 4 to display a help menu" + "\n" + "Please select 5 to quit");
+            System.out.println("Please Select 1 to list all items" + "\n" + "Please select 2 to add an item." + "\n" + "Please select 3 to remove items" + "\n" + "Please select 4 to display a help menu" + "\n" + "Please select 5 to quit");
 
 
             Scanner response = new Scanner(System.in);
@@ -31,6 +38,8 @@ public class ToDoList {
             }
             else if (choice.equals("5")){
                 System.out.println("Thank you for using this app!");
+                outFile.println("Groceries: " + groceries + "\n" + "Personal: " + personal + "\n" + "Chores: " + chores);
+                outFile.close();
                 break;
             }
 
@@ -81,28 +90,65 @@ public class ToDoList {
 
 
                     if (section1.equals("Grocery") || section1.equals("grocery")) {
-                        System.out.print("Which do you want to add to groceries ");
+                        System.out.print("Which item do you want to add to groceries ");
                         Scanner grocery = new Scanner(System.in);
                         String grocery1 = grocery.nextLine();
 
+
+
+                        System.out.print("Do you want this to be a priority? y/n ");
+                        Scanner YorN = new Scanner(System.in);
+                        String priority = YorN.nextLine();
+
+                        if(priority.equals("y")){
+                            groceries.add(0, grocery1);
+                            System.out.println("Grocery: " + groceries);
+                            }
+                        else{
                         groceries.add(grocery1);
-                        System.out.println(" Groceries:" + groceries);
+                        System.out.println(" Groceries:" + groceries);}
 
                     } else if (section1.equals("Personal") || section1.equals("personal")) {
-                        System.out.print("Which do you want to add to personal ");
+                        System.out.print("Which objective do you want to add to personal ");
                         Scanner personal1 = new Scanner(System.in);
                         String personal2 = personal1.nextLine();
 
-                        personal.add(personal2);
-                        System.out.println("Personal: " + personal);
+
+
+
+                        System.out.print("Do you want this to be a priority? y/n ");
+                        Scanner YorN1 = new Scanner(System.in);
+                        String priority = YorN1.nextLine();
+
+                        if(priority.equals("y")){
+                            personal.add(0, personal2);
+                            System.out.println("Personal: " + personal);
+                        }
+                        else{
+                            personal.add(personal2);
+                            System.out.println(" Personal:" + personal);}
+
 
                     } else if (section1.equals("Chores") || section1.equals("chores")) {
-                        System.out.print("Which do you want to add to chores ");
+                        System.out.print("Which objective do you want to add to chores ");
                         Scanner chores1 = new Scanner(System.in);
                         String chores2 = chores1.nextLine();
 
-                        chores.add(chores2);
-                        System.out.println("Chores" + chores);
+
+
+                        System.out.print("Do you want this to be a priority? y/n ");
+                        Scanner YorN2 = new Scanner(System.in);
+                        String priority2 = YorN2.nextLine();
+
+                        if(priority2.equals("y")){
+                            chores.add(0, chores2);
+                            System.out.println("Chores: " + chores);
+                        }
+                        else{
+                            chores.add(chores2);
+                            System.out.println("Chores :" + chores);}
+
+
 
                     } else {
                         break;
