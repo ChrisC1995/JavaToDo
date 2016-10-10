@@ -11,7 +11,7 @@ public class ToDoList {
     public static void toDo() throws IOException {
 
         String fileName = "ToDoList.txt";
-        PrintWriter outFile = new PrintWriter(new FileWriter(fileName));
+        PrintWriter outFile = new PrintWriter(new FileWriter(fileName, true));
 
 
 
