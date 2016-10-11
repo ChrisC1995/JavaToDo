@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.io.File;
 /**
  * Created by christiancampbell on 10/10/16.
  */
@@ -11,6 +12,30 @@ public class ToDoList {
     public static void toDo() throws IOException {
 
         String fileName = "ToDoList.txt";
+
+//        Scanner s = new Scanner(new File(fileName));
+//        ArrayList<String> groceries = new ArrayList<String>();
+//        while (s.hasNext()){
+//            groceries.add(s.next());
+//        }
+//        s.close();
+//
+//        Scanner p = new Scanner(new File(fileName));
+//        ArrayList<String> personal = new ArrayList<String>();
+//        while (p.hasNext()){
+//            personal.add(p.next());
+//        }
+//        p.close();
+//
+//        Scanner c = new Scanner(new File(fileName));
+//        ArrayList<String> chores = new ArrayList<String>();
+//        while (c.hasNext()){
+//            chores.add(c.next());
+//        }
+//        c.close();
+
+
+
         PrintWriter outFile = new PrintWriter(new FileWriter(fileName, true));
 
 
@@ -18,8 +43,11 @@ public class ToDoList {
         ArrayList<String> groceries = new ArrayList<>();
         ArrayList<String> personal = new ArrayList<>();
         ArrayList<String> chores = new ArrayList<>();
+
+
+
         while (true) {
-            System.out.println("Please Select 1 to list all items" + "\n" + "Please select 2 to add an item." + "\n" + "Please select 3 to remove items" + "\n" + "Please select 4 to display a help menu" + "\n" + "Please select 5 to quit");
+            System.out.println("****************" + "\n" + "Please Select 1 to list all items" + "\n" + "Please select 2 to add an item." + "\n" + "Please select 3 to remove items" + "\n" + "Please select 4 to display a help menu" + "\n" + "Please select 5 to quit" + "\n" + "****************");
 
 
             Scanner response = new Scanner(System.in);
@@ -34,11 +62,13 @@ public class ToDoList {
                 break;}
             }
             else if (choice.equals("4")){
-                System.out.println("Use this list to enter things into a To Do list, remove things, and show all things");
+                System.out.println("Use this list to enter things into a To Do list, remove things, and show all things. High priority items are located first on the list. ");
             }
             else if (choice.equals("5")){
-                System.out.println("Thank you for using this app!");
-                outFile.println("Groceries: " + groceries + "\n" + "Personal: " + personal + "\n" + "Chores: " + chores);
+                System.out.println("Thank you for using this app! Your list is now located in a text file called ToDoList.txt!");
+                outFile.println("Groceries: " + groceries);
+                outFile.println("Personal: " + personal);
+                outFile.println("Chores: " + chores);
                 outFile.close();
                 break;
             }
@@ -46,26 +76,30 @@ public class ToDoList {
             else if (choice.equals("3")) {
                     while(true) {
 
-                    System.out.print("What section would you like to delete an item from? (Type none to escape)");
+                    System.out.print("What section would you like to delete an item from? (Type 1 for grocery, type 2 for personal, type 3 for chores) (Type none to escape)");
                     Scanner delete = new Scanner(System.in);
                     String removeSection = delete.nextLine();
 
-                    if (removeSection.equals("Grocery")) {
-                        System.out.print("What item would you like to delete ");
+                    if (removeSection.equals("1")) {
+                        System.out.println("Current items in grocery: " + groceries);
+                        System.out.println("What item would you like to delete ");
                         Scanner delete1 = new Scanner(System.in);
                         String removeSections = delete1.nextLine();
                         groceries.remove(removeSections);
                         System.out.println(groceries);
                     }
-                    else if (removeSection.equals("Personal")) {
-                        System.out.print("What item would you like to delete ");
+                    else if (removeSection.equals("2")) {
+                        System.out.println("Current items in personal: " + personal);
+                        System.out.println("What item would you like to delete ");
+
                         Scanner delete2 = new Scanner(System.in);
                         String removeSections1 = delete2.nextLine();
                         personal.remove(removeSections1);
                         System.out.println(personal);
                     }
-                    else if (removeSection.equals("Chores")) {
-                        System.out.print("What item would you like to delete ");
+                    else if (removeSection.equals("3")) {
+                        System.out.println("Current items in chores: " + chores);
+                        System.out.println("What item would you like to delete ");
                         Scanner delete3 = new Scanner(System.in);
                         String removeSections2 = delete3.nextLine();
                         chores.remove(removeSections2);
@@ -84,19 +118,19 @@ public class ToDoList {
 
             else if (choice.equals("2")) {
                     while (true) {
-                    System.out.print("Which section do you want to add to (Grocery, Personal, Chores (Type none to escape)");
+                    System.out.print("Which section do you want to add to ( Press 1 for Grocery, Press 2 for Personal, Press 3 for Chores) (Type 4 to escape)");
                     Scanner section = new Scanner(System.in);
                     String section1 = section.nextLine();
 
 
-                    if (section1.equals("Grocery") || section1.equals("grocery")) {
+                    if (section1.equals("1") || section1.equals("one")) {
                         System.out.print("Which item do you want to add to groceries ");
                         Scanner grocery = new Scanner(System.in);
                         String grocery1 = grocery.nextLine();
 
 
 
-                        System.out.print("Do you want this to be a priority? y/n ");
+                        System.out.print("Do you want this to be a priority? y/n");
                         Scanner YorN = new Scanner(System.in);
                         String priority = YorN.nextLine();
 
@@ -108,7 +142,7 @@ public class ToDoList {
                         groceries.add(grocery1);
                         System.out.println(" Groceries:" + groceries);}
 
-                    } else if (section1.equals("Personal") || section1.equals("personal")) {
+                    } else if (section1.equals("2") || section1.equals("two")) {
                         System.out.print("Which objective do you want to add to personal ");
                         Scanner personal1 = new Scanner(System.in);
                         String personal2 = personal1.nextLine();
@@ -129,7 +163,7 @@ public class ToDoList {
                             System.out.println(" Personal:" + personal);}
 
 
-                    } else if (section1.equals("Chores") || section1.equals("chores")) {
+                    } else if (section1.equals("3") || section1.equals("three")) {
                         System.out.print("Which objective do you want to add to chores ");
                         Scanner chores1 = new Scanner(System.in);
                         String chores2 = chores1.nextLine();
@@ -142,7 +176,7 @@ public class ToDoList {
 
                         if(priority2.equals("y")){
                             chores.add(0, chores2);
-                            System.out.println("Chores: " + chores);
+                            System.out.println("Chores : " + chores);
                         }
                         else{
                             chores.add(chores2);
