@@ -36,7 +36,9 @@ public class ToDoList {
 
 
 
-        PrintWriter outFile = new PrintWriter(new FileWriter(fileName, true));
+        PrintWriter outFile = new PrintWriter(new FileWriter(fileName));
+
+
 
 
 
