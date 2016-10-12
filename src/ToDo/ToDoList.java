@@ -39,7 +39,7 @@ public class ToDoList {
 
 
 
-        PrintWriter grocFile = new PrintWriter(new FileWriter("ToDoList.txt", true));
+        PrintWriter grocFile = new PrintWriter(new FileWriter("groc.txt", true));
         PrintWriter choreFile = new PrintWriter(new FileWriter("toDo.txt", true));
         PrintWriter persFile = new PrintWriter(new FileWriter("pers.txt", true));
 
@@ -95,7 +95,7 @@ public class ToDoList {
                 System.out.println("Use this list to enter things into a To Do list, remove things, and show all things. High priority items are located first on the list. ");
             }
             else if (choice.equals("5")){
-                System.out.println("Thank you for using this app! Your list is now located in a text file called ToDoList.txt!");
+                System.out.println("Thank you for using this app!");
 
                 choreFile = new PrintWriter(new FileWriter("toDo.txt"));
                 for (int i = 0; i < chores.size(); i++){
