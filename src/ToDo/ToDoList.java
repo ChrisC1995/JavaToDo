@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.io.File;
+import java.io.FileReader;
 /**
  * Created by christiancampbell on 10/10/16.
  */
 public class ToDoList {
     public static void toDo() throws IOException {
 
-        String fileName = "ToDoList.txt";
 
 //        Scanner s = new Scanner(new File(fileName));
 //        ArrayList<String> groceries = new ArrayList<String>();
@@ -34,9 +33,15 @@ public class ToDoList {
 //        }
 //        c.close();
 
+        String groc;
+        String per;
+        String chore;
 
 
-        PrintWriter outFile = new PrintWriter(new FileWriter(fileName));
+
+        PrintWriter grocFile = new PrintWriter(new FileWriter("ToDoList.txt", true));
+        PrintWriter choreFile = new PrintWriter(new FileWriter("toDo.txt", true));
+        PrintWriter persFile = new PrintWriter(new FileWriter("pers.txt", true));
 
 
 
@@ -45,6 +50,29 @@ public class ToDoList {
         ArrayList<String> groceries = new ArrayList<>();
         ArrayList<String> personal = new ArrayList<>();
         ArrayList<String> chores = new ArrayList<>();
+
+
+
+        Scanner grocFiles = new Scanner (new FileReader("groc.txt"));
+        while(grocFiles.hasNextLine()){
+            groc = (grocFiles.nextLine());
+            groceries.add(groc);
+        }
+
+
+        Scanner persFiles = new Scanner (new FileReader("toDo.txt"));
+        while(persFiles.hasNextLine()){
+            per = (persFiles.nextLine());
+            personal.add(per);
+        }
+
+
+        Scanner choreFiles = new Scanner (new FileReader("pers.txt"));
+        while(choreFiles.hasNextLine()){
+            chore = (choreFiles.nextLine());
+            chores.add(chore);
+        }
+
 
 
 
@@ -68,10 +96,24 @@ public class ToDoList {
             }
             else if (choice.equals("5")){
                 System.out.println("Thank you for using this app! Your list is now located in a text file called ToDoList.txt!");
-                outFile.println("Groceries: " + groceries);
-                outFile.println("Personal: " + personal);
-                outFile.println("Chores: " + chores);
-                outFile.close();
+
+                choreFile = new PrintWriter(new FileWriter("toDo.txt"));
+                for (int i = 0; i < chores.size(); i++){
+                    choreFile.println(chores.get(i));
+
+                }
+                grocFile = new PrintWriter(new FileWriter("groc.txt"));
+                for (int i = 0; i < groceries.size(); i++){
+                    grocFile.println(groceries.get(i));
+                }
+                persFile = new PrintWriter(new FileWriter("pers.txt"));
+                for (int i = 0; i <personal.size(); i++){
+                    persFile.println(personal.get(i));
+                }
+
+                grocFile.close();
+                persFile.close();
+                choreFile.close();
                 break;
             }
 
