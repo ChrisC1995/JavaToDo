@@ -77,10 +77,10 @@ public class ToDoList {
             chores.add(chore);
         }
 
+        boolean handsLikeHouses = true;
 
 
-
-        while (true) {
+        while (handsLikeHouses == true) {
             System.out.println("****************" + "\n" + "Please Select 1 to list all items"
                     + "\n" + "Please select 2 to add an item."
                     + "\n" + "Please select 3 to remove items"
@@ -90,52 +90,44 @@ public class ToDoList {
 
 
             Scanner response = new Scanner(System.in);
-            String choice = response.nextLine();
+            int choice = response.nextInt();
 
 
+            switch (choice){
+                case 1:
+                    intro();
+                    break;
+                case 2:
+                    adding();
+                    break;
+                case 3:
+                    removeMeth();
+                    break;
+                case 4:
+                    System.out.println("Use this list to enter things into a To Do list, remove things, and show all things. High priority items are located first on the list. ");
+                    break;
+                case 5:
+                    System.out.println("Thank you for using this app!");
 
-            if (choice.equals("1")) {
-                while(true){
-                System.out.println("Groceries: " + groceries + "\n" + "Personal: " + personal + "\n" + "Chores: " + chores);
+                    choreFile = new PrintWriter(new FileWriter("toDo.txt"));
+                    for (int i = 0; i < chores.size(); i++){
+                        choreFile.println(chores.get(i));
 
-                break;}
-            }
+                    }
+                    grocFile = new PrintWriter(new FileWriter("groc.txt"));
+                    for (int i = 0; i < groceries.size(); i++){
+                        grocFile.println(groceries.get(i));
+                    }
+                    persFile = new PrintWriter(new FileWriter("pers.txt"));
+                    for (int i = 0; i <personal.size(); i++){
+                        persFile.println(personal.get(i));
+                    }
 
-            else if (choice.equals("2")) {
-                adding();
-
-
-            }
-
-            else if (choice.equals("3")) {
-                removeMeth();
-            }
-
-            else if (choice.equals("4")){
-                System.out.println("Use this list to enter things into a To Do list, remove things, and show all things. High priority items are located first on the list. ");
-            }
-
-            else if (choice.equals("5")){
-                System.out.println("Thank you for using this app!");
-
-                choreFile = new PrintWriter(new FileWriter("toDo.txt"));
-                for (int i = 0; i < chores.size(); i++){
-                    choreFile.println(chores.get(i));
-
-                }
-                grocFile = new PrintWriter(new FileWriter("groc.txt"));
-                for (int i = 0; i < groceries.size(); i++){
-                    grocFile.println(groceries.get(i));
-                }
-                persFile = new PrintWriter(new FileWriter("pers.txt"));
-                for (int i = 0; i <personal.size(); i++){
-                    persFile.println(personal.get(i));
-                }
-
-                grocFile.close();
-                persFile.close();
-                choreFile.close();
-                break;
+                    grocFile.close();
+                    persFile.close();
+                    choreFile.close();
+                    handsLikeHouses = false;
+                    break;
             }
 
 
@@ -143,6 +135,14 @@ public class ToDoList {
 
         }
     }
+
+
+    public static void intro(){
+    while(true){
+        System.out.println("Groceries: " + groceries + "\n" + "Personal: " + personal + "\n" + "Chores: " + chores);
+
+        break;}}
+
     public static void removeMeth(){
     while(true) {
 
@@ -208,7 +208,7 @@ public class ToDoList {
                 }
                 else{
                     groceries.add(grocery1);
-                    System.out.println(" Groceries:" + groceries);}
+                    System.out.println(" Groceries: " + groceries);}
 
             } else if (section1.equals("2") || section1.equals("two")) {
                 System.out.print("Which objective do you want to add to personal ");
