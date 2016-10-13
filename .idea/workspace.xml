@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="513c2561-788d-49f4-bb99-7dece65c9883" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaToDo/ToDo/ToDoList.class" afterPath="$PROJECT_DIR$/out/production/JavaToDo/ToDo/ToDoList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groc.txt" afterPath="$PROJECT_DIR$/groc.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pers.txt" afterPath="$PROJECT_DIR$/pers.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ToDo/ToDoList.java" afterPath="$PROJECT_DIR$/src/ToDo/ToDoList.java" />
     </list>
     <ignored path="JavaToDo.iws" />
@@ -30,8 +26,8 @@
       <file leaf-file-name="ToDoList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ToDo/ToDoList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="123" column="21" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+            <state relative-caret-position="406">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,9 +71,9 @@
         <option value="$PROJECT_DIR$/src/ToDo/Remove.java" />
         <option value="$PROJECT_DIR$/ToDoList.txt" />
         <option value="$PROJECT_DIR$/src/ToDo/ToDoList.java" />
+        <option value="$PROJECT_DIR$/groc.txt" />
         <option value="$PROJECT_DIR$/pers.txt" />
         <option value="$PROJECT_DIR$/toDo.txt" />
-        <option value="$PROJECT_DIR$/groc.txt" />
       </list>
     </option>
   </component>
@@ -812,16 +808,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ToDo/Remove.java" />
-    <entry file="file://$PROJECT_DIR$/src/ToDo/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaToDo.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -836,15 +822,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/groc.txt">
+    <entry file="file://$PROJECT_DIR$/src/ToDo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="165">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pers.txt">
+    <entry file="file://$PROJECT_DIR$/groc.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -860,10 +848,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pers.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ToDo/ToDoList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="123" column="21" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+        <state relative-caret-position="406">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
